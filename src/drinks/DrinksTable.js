@@ -6,7 +6,7 @@ const DrinkTable = (props) => { //1.
    
     return (
         <div>
-            <h3 style={{color: "white"}}>Recent Drinks</h3>
+            <h2 style={{color: "white", fontWeight: 'bold'}}>Recent Drinks</h2>
             <hr />
             <Table dark>
                 <thead>
@@ -27,8 +27,8 @@ const DrinkTable = (props) => { //1.
                                     <td>{drink.def}</td>
                                     <td>{drink.description}</td>
                                     <td>
-                                        <Button id={drink.id} onClick={props.delete} outline color="warning">Delete</Button> {'  '} 
-                                        <Button id={drink.owner} onClick={e => props.update(e, drink)} outline color="info">Update</Button>
+                                        <Button id={drink.id} onClick={props.delete} outline color="warning" style={{fontWeight: 'bold'}}>Delete</Button> {'  '} 
+                                        <Button id={drink.owner} onClick={e => props.update(e, drink)} outline color="info" style={{fontWeight: 'bold'}}>Update</Button>
                                     </td>
                                 </tr>
                             )

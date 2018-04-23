@@ -72,7 +72,7 @@ class DrinkCreate extends Component {
                         <Label for="description" style={{color: "white", fontSize: "30px"}}>Notes</Label>
                         <Input id="description" type="textarea" name="description" value={this.state.description} placeholder="Tell us about your drink!" onChange={this.handleChange} />
                     </FormGroup>
-                    <Button id="bCreate" type="submit" size="lg" outline color="info" block style={{color: "white"}}>Submit Drink!</Button>
+                    <Button id="bCreate" type="submit" size="lg" outline color="info" block style={{fontWeight: 'bold'}}>Submit Drink!</Button>
                     <br/>
                     <br/>
                 </Form>

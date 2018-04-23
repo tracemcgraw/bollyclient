@@ -28,11 +28,11 @@ class SiteBar extends Component{
         return(
             <div>
                 <Navbar color="faded" light expand="md">
-                    <Button outline color="info" size="lg"style={{color: "white"}}href="/">Bolly</Button>
+                    <Button outline color="info" size="lg"style={{color: "white", fontWeight: 'bold'}}href="/">Bolly</Button>
                     <Nav className="ml-auto" navbar>
                     <NavItem>
                         <Link to="/search">
-                            <Button size="lg">Search</Button>
+                            <Button size="lg" style={{fontWeight: 'bold'}}>Search</Button>
                         </Link>
                     </NavItem>
                     </Nav>
@@ -40,7 +40,7 @@ class SiteBar extends Component{
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <Button size="lg" onClick={() => this.props.clickLogout()}>Logout</Button>
+                                <Button size="lg" style={{fontWeight: 'bold'}} onClick={() => this.props.clickLogout()}>Logout</Button>
                             </NavItem>
                         </Nav>
                     </Collapse>

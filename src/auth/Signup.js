@@ -66,26 +66,26 @@ class Signup extends Component {
         const submitHandler = (!this.state.email && !validatePass) ? this.validateAll : !this.state.email ? this.validateEmail : !validatePass ? this.validatePassword : this.handleSubmit
         return(
             <div>
-                <h1 className="display-4" style={{color: "#5C5858", fontWeight: "bold", textAlign:"center"}}>Sign Up!</h1>
+                <h1 className="display-4" style={{color: "#302733", fontWeight: "bold", textAlign:"center"}}>Sign Up!</h1>
                 <Form onSubmit={submitHandler}>
                     <FormGroup>
-                        <Label for="username" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>First Name</Label>
+                        <Label for="username" style={{color: "#666566", fontWeight: 'bold', fontSize: "35px"}}>First Name</Label>
                         <Input id="username" type="text" name="username" placeholder="enter name" onChange={this.handleChange} required/>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="userLastName" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>Last Name</Label>
+                        <Label for="userLastName" style={{color: "#666566", fontWeight: 'bold', fontSize: "35px"}}>Last Name</Label>
                         <Input id="userLastName" type="text" name="userLastName" placeholder="enter last name" onChange={this.handleChange} required/>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="email" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>Email</Label>
+                        <Label for="email" style={{color: "#666566", fontWeight: 'bold', fontSize: "35px"}}>Email</Label>
                         <Input id="email" type="text" name="email" placeholder="enter email" onChange={this.handleChange} required/>
                 
                     </FormGroup>
                     <FormGroup>
-                        <Label for="password" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>Password</Label>
+                        <Label for="password" style={{color: "#666566", fontWeight: 'bold', fontSize: "35px"}}>Password</Label>
                         <Input id="password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} required/>
                     </FormGroup>
-                    <Button outline color="info" size="lg"type="submit" style={{color: 'white'}} block>Submit</Button>
+                    <Button outline color="info" size="lg"type="submit" style={{fontWeight: "bold", color: 'white'}} block>Submit</Button>
                     
                 </Form>
             </div>
