@@ -27,7 +27,10 @@ class Login extends Component {
             })
         }).then(
             (response) => response.json()
-        ).then(data => this.props.setToken(data.sessionToken))
+        ).then(data =>{
+            localStorage.setItem("user", data.user.username)
+            this.props.setToken(data.sessionToken)
+        })   
         
         event.preventDefault()
     }
@@ -35,21 +38,21 @@ class Login extends Component {
     render(){
         return(
             <div>
-                <h1 style={{color: "white"}}>Login</h1>
+                <h1 className="display-4" style={{color: "#5C5858", fontWeight: 'bold', textAlign: "center"}}>Login</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
 
-                        <Label for="username" style={{color: "white"}}>Username</Label>
+                        <Label for="username" style={{fontWeight: 'bold', fontSize: "40px"}}>Username</Label>
                         <Input id="li_username" type="text" name="username" placeholder="enter username" onChange={this.handleChange}/>
 
                     </FormGroup>
                     <FormGroup>
 
-                        <Label for="password" style={{color: "white"}}>Password</Label>
+                        <Label for="password" style={{fontWeight: 'bold', fontSize: "40px"}}>Password</Label>
                         <Input id="li_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange}/>
                     
                     </FormGroup>
-                    <Button color="info" type="submit">Submit</Button>
+                    <Button outline color="info" size="lg" type="submit" style={{color: 'white'}} block>Submit</Button>
                 </Form>
             </div>
         )

@@ -29,16 +29,18 @@ class SiteBar extends Component{
             <div>
                 <Navbar color="faded" light expand="md">
                     <Button outline color="info" size="lg"style={{color: "white"}}href="/">Bolly</Button>
-                        <NavItem>
-                            <Link to="/search">
-                                <Button>Search</Button>
-                            </Link>
-                        </NavItem>
+                    <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <Link to="/search">
+                            <Button size="lg">Search</Button>
+                        </Link>
+                    </NavItem>
+                    </Nav>
                     <NavbarToggler onClick={this.props.logout} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                                <Button size="lg" onClick={() => this.props.clickLogout()}>Logout</Button>
                             </NavItem>
                         </Nav>
                     </Collapse>

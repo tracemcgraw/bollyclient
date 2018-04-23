@@ -18,3 +18,13 @@
     font-size: 80px;
     color: white;
 }
+#h2Title{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+#searchInput{
+    position: absolute;
+    left: 35%;
+    width: 30%;
+}

@@ -17,6 +17,7 @@ class DrinkIndex extends React.Component{
 
 
     drinkDelete = (event) => {
+        console.log(event.target);
         
         fetch(`http://localhost:3000/api/log/delete/${event.target.id}`,{
            method: "DELETE",

@@ -7,7 +7,7 @@ const SFormResults = ({results}) => {
     // const link = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`;
     const resultsFormatted = results.map((element, index) =>
     
-                <Card className="drink">
+                <Card className="drink" style={{right: "1%"}}>
                 <CardBody>
              
 

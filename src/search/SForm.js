@@ -44,7 +44,7 @@ export class SForm extends Component {
                         console.log(data);
                         
                         const results = data.drinks;
-                        this.setState({ results });
+                        this.setState({ results: results });
                     });
                 })
 
@@ -57,8 +57,12 @@ export class SForm extends Component {
         return(
             
             <form onSubmit={this.handleSubmit} id="form">
-            <h1 className="Display-2"id="bollyTitle">Bolly</h1>
+            <h1 id="bollyTitle">Bolly</h1>
+               
                 <input onKeyUp={this.handleKeyUp} id="searchInput" className="searchBar" type="text" placeholder="Search for a drink!" required />
+                <br/>
+                <br/>
+                <br/>
                 
                 <SFormResults results={this.state.results} />
             </form>

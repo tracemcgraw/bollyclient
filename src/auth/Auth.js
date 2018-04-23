@@ -5,33 +5,31 @@ import Login from './Login';
 
 
     //1         //T1
-const Auth = (props) => {
-
-   
-    
+const Auth = (props) => { 
     return(
         
-        <Container>
+        <Container className="auth-container">
         
             <div>
-            <Jumbotron fluid  style={{textAlign: "center", opacity: "0.5", }}>
+            <Jumbotron fluid  style={{textAlign: "center", opacity: "0.7", backgroundColor: "grey", color: "white"}}>
                 <Container fluid>
                 <h1 className="display-2">Welcome to Bolly!</h1>
                 <h1 className="display-4">Let's get mixing!</h1> <br/>
-                <h3>The drinking app that allows you to record your own drinks, and search for more drinks recipes to create!</h3> <br/>
+                <h3>The drinking app that allows you to record your own drinks.</h3>
+                <h3>Use Bolly to search for more drinks recipes to create!</h3> <br/>
                 <h5>* By registering yourself an account on Bolly, you must be the legal age to drink and are cautioned to drink responsibly. *</h5>
                 </Container>
             </Jumbotron>
             </div>
             <Row>
-                <Col md="6">
-                                {/* T2  T3    T4*/}
-                    <Signup setToken={props.setToken} />
-                </Col>
-                <Col md="6">
-                                    {/* 5 */}
-                    <Login setToken={props.setToken} />
-                </Col>
+                    <Col md="6">
+                                    {/* T2  T3    T4*/}
+                        <Signup setToken={props.setToken} />
+                    </Col>
+                    <Col md="6">
+                                        {/* 5 */}
+                        <Login setToken={props.setToken} />
+                    </Col>
             </Row>
         </Container>
     )

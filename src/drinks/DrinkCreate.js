@@ -52,15 +52,15 @@ class DrinkCreate extends Component {
           }
         return(
             <div>
-                <h3 style={{color: "white"}}>Create a drink!</h3>
+                <h1 style={{color: "white"}}>{localStorage.getItem('user')}'s drink!</h1>
                 <hr />
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
-                        <Label for ="result" style={{color: "white"}}>Drink Name</Label>
+                        <Label for ="result" style={{color: "white", fontSize:"30px"}}>Drink Name</Label>
                         <Input id="result" type="text" name="result" value={this.state.result} placeholder="Enter the name" onChange={this.handleChange}/>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="def" style={{color: "white"}}>Type</Label>
+                        <Label for="def" style={{color: "white", fontSize: "30px"}}>Type</Label>
                         <Input type="select" name="def" id="def" value={this.state.def} onChange={this.handleChange} placeholder="Type">
                             <option></option>
                             <option value="Cocktail">Cocktail</option>
@@ -69,7 +69,7 @@ class DrinkCreate extends Component {
                         </Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="description" style={{color: "white"}}>Notes</Label>
+                        <Label for="description" style={{color: "white", fontSize: "30px"}}>Notes</Label>
                         <Input id="description" type="textarea" name="description" value={this.state.description} placeholder="Tell us about your drink!" onChange={this.handleChange} />
                     </FormGroup>
                     <Button id="bCreate" type="submit" size="lg" outline color="info" block style={{color: "white"}}>Submit Drink!</Button>

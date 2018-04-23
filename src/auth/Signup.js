@@ -5,13 +5,15 @@ class Signup extends Component {
     constructor(props){ //T2
         super(props);
         this.state = {
-            username: "", //T1
+            username: "",
+            userLastName: "", //T1
             password: "",
+            email: "",
             isEmpty: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.validateSignUp = this.validateSignUp.bind(this);
+       
     }
 
     //handleChange Method
@@ -41,31 +43,50 @@ class Signup extends Component {
         })
         event.preventDefault()
     }
-    validateSignUp(event){
-        this.state({
-            errorMessage: 'Fields must not be empty'
-        })
-        event.preventDefault();
+   validateEmail = e => {
+       document.getElementById('email').removeAttribute('hidden');
+       e.preventDefault();
+   }
+
+    validatePassword = e =>{
+        document.getElementById('password').removeAttribute('hidden');
+        e.preventDefault();
     }
+
+    validateAll = e => {
+        document.getElementById('email').removeAttribute('hidden');
+        document.getElementById('password').removeAttribute('hidden');
+        this.handleSubmit()
+        e.preventDefault();
+    }
+
+
     render(){
-        const submitHandler = !this.state.username ? this.validateSignUp : this.handleSubmit
+        const validatePass = (this.state.password.length >= 6)
+        const submitHandler = (!this.state.email && !validatePass) ? this.validateAll : !this.state.email ? this.validateEmail : !validatePass ? this.validatePassword : this.handleSubmit
         return(
             <div>
-                <h1 style={{color: "white"}}>Sign Up!</h1>
+                <h1 className="display-4" style={{color: "#5C5858", fontWeight: "bold", textAlign:"center"}}>Sign Up!</h1>
                 <Form onSubmit={submitHandler}>
                     <FormGroup>
-                        <Label for="username" style={{color: "white"}}>Username</Label>
-                        <Input id="username" type="text" name="username" placeholder="enter username" onChange={this.handleChange}/>
+                        <Label for="username" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>First Name</Label>
+                        <Input id="username" type="text" name="username" placeholder="enter name" onChange={this.handleChange} required/>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="email" style={{color: "white"}}>Email</Label>
-                        <Input id="email" type="text" name="email" placeholder="enter email" onChange={this.handleChange}/>
+                        <Label for="userLastName" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>Last Name</Label>
+                        <Input id="userLastName" type="text" name="userLastName" placeholder="enter last name" onChange={this.handleChange} required/>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="password" style={{color: "white"}}>Password</Label>
-                        <Input id="password" type="password" name="password" placeholder="enter password" onChange={this.handleChange}/>
+                        <Label for="email" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>Email</Label>
+                        <Input id="email" type="text" name="email" placeholder="enter email" onChange={this.handleChange} required/>
+                
                     </FormGroup>
-                    <Button color="info" type="submit">Submit</Button>
+                    <FormGroup>
+                        <Label for="password" style={{color: "white", fontWeight: 'bold', fontSize: "35px"}}>Password</Label>
+                        <Input id="password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} required/>
+                    </FormGroup>
+                    <Button outline color="info" size="lg"type="submit" style={{color: 'white'}} block>Submit</Button>
+                    
                 </Form>
             </div>
         )

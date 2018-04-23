@@ -10,8 +10,7 @@ const DrinkTable = (props) => { //1.
             <hr />
             <Table dark>
                 <thead>
-                    <tr>
-                        
+                    <tr>   
                         <th>Name</th>
                         <th>Type</th>
                         <th>Notes</th>
@@ -28,7 +27,7 @@ const DrinkTable = (props) => { //1.
                                     <td>{drink.def}</td>
                                     <td>{drink.description}</td>
                                     <td>
-                                        <Button id={drink.owner} onClick={props.delete} outline color="warning">Delete</Button> {'  '} 
+                                        <Button id={drink.id} onClick={props.delete} outline color="warning">Delete</Button> {'  '} 
                                         <Button id={drink.owner} onClick={e => props.update(e, drink)} outline color="info">Update</Button>
                                     </td>
                                 </tr>

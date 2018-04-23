@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Auth from './auth/Auth';
 import Sitebar from './home/Navbar';
 import Splash from './home/Splash';
-
+import { SForm } from './search/SForm';
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom'
-import { SForm } from './search/SForm';
+
 
 
 class App extends Component {
