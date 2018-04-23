@@ -57,7 +57,7 @@ export class SForm extends Component {
         return(
             
             <form onSubmit={this.handleSubmit} id="form">
-            <h1 id="bollyTitle">Bolly</h1>
+            <h1 className="Display-2"id="bollyTitle">Bolly</h1>
                 <input onKeyUp={this.handleKeyUp} id="searchInput" className="searchBar" type="text" placeholder="Search for a drink!" required />
                 
                 <SFormResults results={this.state.results} />

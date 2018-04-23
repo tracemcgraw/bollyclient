@@ -28,7 +28,7 @@ class SiteBar extends Component{
         return(
             <div>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">Bolly</NavbarBrand>
+                    <Button outline color="info" size="lg"style={{color: "white"}}href="/">Bolly</Button>
                         <NavItem>
                             <Link to="/search">
                                 <Button>Search</Button>
