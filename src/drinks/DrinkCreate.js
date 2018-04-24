@@ -52,7 +52,7 @@ class DrinkCreate extends Component {
           }
         return(
             <div>
-                <h1 style={{color: "white"}}>{localStorage.getItem('user')}'s drink!</h1>
+                <h1 style={{color: "white"}}>Bartender: {localStorage.getItem('user')}</h1>
                 <hr />
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
